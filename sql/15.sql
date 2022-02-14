@@ -4,5 +4,5 @@
  */
 select category.name, film.sum from category 
 join (select category_id, sum(language.language_id) as sum from film_category 
-    join (select film_id, language_id from film) language using (film_id) group by film_category.category_id)
+join (select film_id, language_id from film) language using (film_id) group by film_category.category_id)
 film using (category_id);
